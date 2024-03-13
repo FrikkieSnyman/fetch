@@ -96,6 +96,16 @@ const routes = {
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.end(JSON.stringify({name: 'Hubot', login: 'hubot'}))
   },
+  '/largerandomjson': function(res) {
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    // large random JSON object
+    var obj = {}
+    for (var i = 0; i < 100; i++) {
+      obj[i] = Math.random()
+    }
+    res.end(JSON.stringify(obj))
+    
+  },
   '/json-error': function(res) {
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.end('not json {')
