@@ -37,6 +37,7 @@
     "prepare": "make dist/fetch.umd.js dist/fetch.umd.js.flow",
     "pretest": "make",
     "test": "karma start ./test/karma.config.js && karma start ./test/karma-worker.config.js",
+    "perf-test": "make && karma start ./test/karma-perf.config.js",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   }
 }

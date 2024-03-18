@@ -96,7 +96,16 @@ const routes = {
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.end(JSON.stringify({name: 'Hubot', login: 'hubot'}))
   },
-  '/largerandomjson': function(res) {
+  '/json/random/small': function(res) {
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    // large random JSON object
+    var obj = {}
+    for (var i = 0; i < 10; i++) {
+      obj[i] = Math.random()
+    }
+    res.end(JSON.stringify(obj))
+  },
+  '/json/random/medium': function(res) {
     res.writeHead(200, {'Content-Type': 'application/json'})
     // large random JSON object
     var obj = {}
@@ -104,7 +113,15 @@ const routes = {
       obj[i] = Math.random()
     }
     res.end(JSON.stringify(obj))
-    
+  },
+  '/json/random/large': function(res) {
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    // large random JSON object
+    var obj = {}
+    for (var i = 0; i < 10000; i++) {
+      obj[i] = Math.random()
+    }
+    res.end(JSON.stringify(obj))
   },
   '/json-error': function(res) {
     res.writeHead(200, {'Content-Type': 'application/json'})
